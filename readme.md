@@ -7,6 +7,7 @@
     all the views uses the blade template engine. 
 
     > How views work, the pages to view are all in the web.php or we can say on the routes folder.
-    we just return a page here. like we return the view here and it just serches the desired function on the views folder. 
+    we just return a page here. like we return the view here and it just serches the 
+    desired function on the views folder. 
 
 
