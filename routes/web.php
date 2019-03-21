@@ -20,6 +20,6 @@ Route::get('/about', function(){
 });
 
 
-Route::get('/users/{id}', function($id){
-    return 'This is user '.$id; 
-});
+// Route::get('/users/{id}', function($id){
+//     return 'This is user '.$id; 
+// });
