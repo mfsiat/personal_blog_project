@@ -4,9 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    {{-- <link rel="stylesheet" href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css"> --}}
     <title>{{config('app.name', 'MyBlog')}}</title>
     </head>
     <body>
-        @yield('content')
+        @include('inc.navbar')
+        <div class="container">
+            @yield('content')
+        </div>
     </body>
 </html>
