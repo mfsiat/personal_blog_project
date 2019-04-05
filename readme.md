@@ -10,4 +10,6 @@
     we just return a page here. like we return the view here and it just serches the 
     desired function on the views folder. 
 
+    
+
 
