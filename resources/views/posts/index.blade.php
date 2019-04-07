@@ -5,7 +5,7 @@
     @if (count($posts)>1)
         @foreach ($posts as $post)
             <div class="card card-body bg-light">
-            <h3>{{$post->title}}</h3>
+            <h3><a href="/posts/{{$post->id}}">{{$post->title}}</a></h3>
             <small>Created on {{$post->created_at}}</small>
             </div>
         @endforeach

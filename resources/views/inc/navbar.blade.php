@@ -11,6 +11,9 @@
         <li class="nav-item active">
             <a class="nav-link" href="/services">Services <span class="sr-only">(current)</span></a>
         </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/posts">Blog <span class="sr-only">(current)</span></a>
+        </li>
         {{-- <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
         </li>
