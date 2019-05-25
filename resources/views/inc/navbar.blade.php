@@ -19,13 +19,13 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="/posts">Blog</a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="/posts/create">Create Post</a>
-                        </li>
+                        </li> --}}
                     </ul> 
                 </ul>
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
@@ -41,8 +41,11 @@
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
+                        
+                        
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        {{-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a href="#">Dashboard</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
@@ -52,10 +55,20 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
-                        </div>
-                    </li>
-                @endguest
+                        </div> --}}
+
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                            
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>    
+
+                </li>
             </ul>
+
+                </li>
+                @endguest
+        </ul>
         </div>
     </div>
 </nav>
