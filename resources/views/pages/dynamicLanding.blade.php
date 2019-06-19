@@ -40,12 +40,12 @@ h2 {
 </style>
     <time id="time"></time>
     <h1>
-        <span id="greeting">Hello</span>
-        <span id="name" contenteditable="true">Siat</span>
+        <span id="greeting"></span>
+        <span id="name" contenteditable="true"></span>
     </h1>
 
     <h2>What is your focus for today?</h2>
-    <h2 id="focus" contenteditable="true">Code Code Code</h2>
+    <h2 id="focus" contenteditable="true"></h2>
     
 <script>
 // Dom elements
@@ -93,7 +93,7 @@ function setBgGreet() {
         greeting.textContent = 'Good Morning';
     }else if(hour < 18) {
         // Afternoon 
-        document.body.style.backgroundImage = "url('/img/afternoon.jpg')";
+        document.body.style.backgroundImage = "url('../img/afternoon.jpg')";
         document.body.style.backgroundSize = 'cover';
         document.body.style.color = 'white';
         greeting.textContent = 'Good Afternoon';
