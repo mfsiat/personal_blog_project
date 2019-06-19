@@ -10,7 +10,8 @@ class PagesController extends Controller
         $title = 'Hello there!!';
         // return view('pages.index', compact('title'));
         // return view('pages.index');
-        return view('pages.index')->with('title', $title);
+        // return view('pages.index')->with('title', $title);
+        return view('pages.dynamicLanding')->with('title', $title);
     }
 
     public function about(){
