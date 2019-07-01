@@ -6,7 +6,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* justify-content: center; */
+    justify-content: center;
 }
 
 body {
@@ -14,7 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     text-align: center;
     height: 100vh;
     color: black;
@@ -22,11 +22,11 @@ body {
 
 
 #time {
-    font-size: 8rem;
+    font-size: 6rem;
 }
 
 h1 {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 h2 {
@@ -36,7 +36,7 @@ h2 {
 
 @media (max-width: 700px) {
     #time {
-        font-size: 6rem;
+        font-size: 2rem;
     }
 }
 </style>
