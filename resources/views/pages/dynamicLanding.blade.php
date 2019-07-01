@@ -92,7 +92,7 @@ function setBgGreet() {
         // Morning 
         document.body.style.backgroundImage = "url('../img/morning.jpg')";
         document.body.style.backgroundSize = 'cover';
-        document.body.style.color = 'white';
+        // document.body.style.color = 'white';
         greeting.textContent = 'Good Morning';
     }else if(hour < 18) {
         // Afternoon 
