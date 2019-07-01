@@ -6,6 +6,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    /* justify-content: center; */
 }
 
 body {
@@ -18,6 +19,7 @@ body {
     height: 100vh;
     color: black;
 }
+
 
 #time {
     font-size: 8rem;
@@ -38,6 +40,7 @@ h2 {
     }
 }
 </style>
+
     <time id="time"></time>
     <h1>
         <span id="greeting"></span>
@@ -46,7 +49,7 @@ h2 {
 
     <h2>What is your focus for today?</h2>
     <h2 id="focus" contenteditable="true"></h2>
-    
+
 <script>
 // Dom elements
 
