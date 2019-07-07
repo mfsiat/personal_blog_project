@@ -1,5 +1,9 @@
 # Personal Blog Project 
-[![forthebadge](https://forthebadge.com/images/badges/validated-html5.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) [!(https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)] [!(https://img.shields.io/badge/license-MIT-green.svg)] [!(https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg)]
+[![forthebadge](https://forthebadge.com/images/badges/validated-html5.svg)](https://forthebadge.com) 
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) 
+[![dependencis](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)] 
+[![license](https://img.shields.io/badge/license-MIT-green.svg)] 
+[![license](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg)]
 
 A simple blog project created with laravel php. 
     
