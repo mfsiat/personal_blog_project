@@ -1,4 +1,6 @@
 # Personal Blog Project 
+[![forthebadge](https://forthebadge.com/images/badges/validated-html5.svg)](https://forthebadge.com)
+
 A simple blog project created with laravel php. 
     
 ## Config
