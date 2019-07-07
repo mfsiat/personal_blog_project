@@ -5,7 +5,7 @@
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://shields.io/) 
 [![license](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg)](https://shields.io/)
 
-A simple blog project created with laravel php. 
+A simple blog project created with laravel php. [Click here to view the complete blog](http://nasirblog.epizy.com/ "My Blog")
     
 ## Config
 The user.php file on the app folder is a model. as laravel follows the MVC concept so user.php behaves as a model.the controllers are in the: 
