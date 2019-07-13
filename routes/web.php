@@ -29,6 +29,17 @@ Route::resource('posts', 'PostsController');
 // Route::get('/users/{id}', function($id){
 //     return 'This is user '.$id; 
 // });
+
+Route::get('/reboot', function(){
+	Artisan::call('cache:clear');
+	Artisan::call('route:clear');
+	Artisan::call('view:clear');
+	Artisan::call('key:generate');
+	Artisan::call('config:cache');
+
+	return '<center><h1>System Rebooted!</h1></center>';
+});
+
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index');
