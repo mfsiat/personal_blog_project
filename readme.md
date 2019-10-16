@@ -5,6 +5,8 @@
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://shields.io/) 
 [![license](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg)](https://shields.io/)
 
+[![Build Status](https://travis-ci.org/mfsiat/personal_blog_project.svg?branch=master)](https://travis-ci.org/mfsiat/personal_blog_project)
+
 A simple blog project created with laravel php. [Click here to view the complete blog](http://nasirblog.000webhostapp.com/ "My Blog")
     
 Enjoy!!!!
