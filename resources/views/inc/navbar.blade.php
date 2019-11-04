@@ -14,7 +14,7 @@
                             <a class="nav-link" href="/about">About</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="/services">Services</a>
+                            <a class="nav-link" href="/services">Github Profile</a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="/posts">Blog</a>
