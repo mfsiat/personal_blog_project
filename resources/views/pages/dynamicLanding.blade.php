@@ -2,170 +2,147 @@
 
 @section('content')
 <body>
-    <style>
-    * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-}
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Raleway:200,100,400');
 
-body {
-    font-family: 'Quicksand', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: center; */
-    text-align: center;
-    height: 100vh;
-    color: black;
-}
-
-
-#time {
-    font-size: 6rem;
-}
-
-h1 {
-    margin-bottom: 2rem;
-}
-
-h2 {
-    margin-bottom: 0.5rem;
-    opacity: 0.6;
-}
-
-@media (max-width: 700px) {
-    #time {
-        font-size: 2rem;
+    body {
+      font-family: 'Raleway', sans-serif;
+      height: 100vh;
+      background: #333 url('https://image.ibb.co/n5A2HU/showcase.jpg') no-repeat center center / cover;
+      color: #ccc;
+      overflow:hidden;
     }
-}
-</style>
 
-    <time id="time"></time>
-    <h1>
-        <span id="greeting"></span>
-        <span id="name" contenteditable="true"></span>
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      padding: 0 3rem;
+    }
+
+    h1, h2 {
+      font-weight: 200;
+      margin: 0.4rem;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #aaa;
+    }
+
+    /* Cursor */
+    .txt-type > .txt {
+      border-right: 0.2rem solid #777;
+    }
+
+    @media(min-width: 1200px) {
+      h1 {
+        font-size: 5rem;
+      }
+    }
+
+    @media(max-width: 800px) {
+      .container {
+        padding: 0 1rem;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media(max-width: 500px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+
+{{-- Main body  --}}
+<div class="container">
+    <h1>Nasirul Islam The 
+      <span class="txt-type" data-wait="3000" data-words='["Developer", "Designer", "Creator"]'></span>
     </h1>
+  </div>
 
-    <h2>What is your focus for today?</h2>
-    <h2 id="focus" contenteditable="true"></h2>
-
+  
 <script>
-// Dom elements
+// ES6 Class
+class TypeWriter {
+  constructor(txtElement, words, wait = 3000) {
+    this.txtElement = txtElement;
+    this.words = words;
+    this.txt = '';
+    this.wordIndex = 0;
+    this.wait = parseInt(wait, 10);
+    this.type();
+    this.isDeleting = false;
+  }
 
-const time = document.getElementById('time'),
-    greeting =document.getElementById('greeting'),
-    name =document.getElementById('name'),
-    focus =document.getElementById('focus');
+  type() {
+    // Current index of word
+    const current = this.wordIndex % this.words.length;
+    // Get full text of current word
+    const fullTxt = this.words[current];
 
-// Options    
-const showAmPm = true;
-
-function showTime() {
-    let today = new Date(),
-    hour = today.getHours(),
-    min = today.getMinutes(),
-    sec = today.getSeconds();
-
-    // Set am or pm
-    const amPm = hour >= 12 ? 'PM' : 'AM';
-
-    // 12hr format
-    hour = hour % 12 || 12;
-    
-    // Output Time
-    time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)} ${showAmPm ? amPm : ''}` ;
-
-    setTimeout(showTime, 1000);
-}
-
-function addZero(n) {
-    return (parseInt(n, 10) < 10 ? '0' : '') + n; // ternary operator used 
-}
-
-// Set background and Greetings 
-function setBgGreet() {
-    let today = new Date(),
-    hour = today.getHours();
-
-    if(hour < 12) {
-        // Morning 
-        document.body.style.backgroundImage = "url('../img/morning.jpg')";
-        document.body.style.backgroundSize = 'cover';
-        // document.body.style.color = 'white';
-        greeting.textContent = 'Good Morning';
-    }else if(hour < 18) {
-        // Afternoon 
-        document.body.style.backgroundImage = "url('../img/afternoon.jpg')";
-        document.body.style.backgroundSize = 'cover';
-        document.body.style.color = 'white';
-        greeting.textContent = 'Good Afternoon';
-    }else {
-        // Evening 
-        document.body.style.backgroundImage = "url('../img/evening.jpg')";
-        document.body.style.backgroundSize = 'cover';
-        document.body.style.color = 'white';
-        greeting.textContent = 'Good Evening';
-    }
-}
-
-// Get name by local storage
-function getName() {
-    if(localStorage.getItem('name') === null) {
-        name.textContent = '[Enter Name]';
+    // Check if deleting
+    if(this.isDeleting) {
+      // Remove char
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
     } else {
-        name.textContent = localStorage.getItem('name');
+      // Add char
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
     }
+
+    // Insert txt into element
+    this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+    // Initial Type Speed
+    let typeSpeed = 300;
+
+    if(this.isDeleting) {
+      typeSpeed /= 2;
+    }
+
+    // If word is complete
+    if(!this.isDeleting && this.txt === fullTxt) {
+      // Make pause at end
+      typeSpeed = this.wait;
+      // Set delete to true
+      this.isDeleting = true;
+    } else if(this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      // Move to next word
+      this.wordIndex++;
+      // Pause before start typing
+      typeSpeed = 500;
+    }
+
+    setTimeout(() => this.type(), typeSpeed);
+  }
 }
 
-// Set Name
-function setName(e) {
-    if(e.type === 'keypress') {
-        // Make sure enter is pressed
-        if(e.which == 13 || e.keyCode == 13) {
-            localStorage.setItem('name', e.target.innerText);
-            name.blur();
-        }
-    } else {
-        localStorage.setItem('name', e.target.innerText);
-    }
+
+// Init On DOM Load
+document.addEventListener('DOMContentLoaded', init);
+
+// Init App
+function init() {
+  const txtElement = document.querySelector('.txt-type');
+  const words = JSON.parse(txtElement.getAttribute('data-words'));
+  const wait = txtElement.getAttribute('data-wait');
+  // Init TypeWriter
+  new TypeWriter(txtElement, words, wait);
 }
-
-// Set Focus
-function setFocus(e) {
-    if(e.type === 'keypress') {
-        // Make sure enter is pressed
-        if(e.which == 13 || e.keyCode == 13) {
-            localStorage.setItem('focus', e.target.innerText);
-            focus.blur();
-        }
-    } else {
-        localStorage.setItem('focus', e.target.innerText);
-    }
-}
-
-
-// Get focus
-function getFocus() {
-    if(localStorage.getItem('focus') === null) {
-        focus.textContent = '[Enter focus]';
-    } else {
-        focus.textContent = localStorage.getItem('focus');
-    }
-}
-
-// add event listener on key press so that we could save the name and focus 
-name.addEventListener('keypress', setName);
-name.addEventListener('blur', setName);
-focus.addEventListener('keypress', setFocus);
-focus.addEventListener('blur', setFocus);
-
-// Run 
-showTime();
-setBgGreet();
-getName();
-getFocus();    
 </script>
 </body>
 

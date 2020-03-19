@@ -11,10 +11,10 @@
                             <a class="nav-link" href="/">Home</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="/about">About</a>
+                            <a class="nav-link" href="/about">Portfolio</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="/services">Github Profile</a>
+                            <a class="nav-link" href="/services">Github</a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="/posts">Blog</a>
