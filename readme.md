@@ -19,7 +19,7 @@ Enjoy!!!!
 
 - **Github**: Well this one is my favourite. On this page all my latest public repo's are getting fetched from github. So that the viewer can easily see my github page at a glance. It's also using the **github public API**.
 
-- **Blog**: This page shows all my blog posts. Well the main reason for creating this blog or website. 
+- **Blog**: This page shows all my blog posts. Well the main reason for creating this blog or website. [This feature has become obsolete due to my hosting platform issue]() 
 
     
 
