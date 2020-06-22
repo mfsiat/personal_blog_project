@@ -1,4 +1,8 @@
+# Things i learned from this project
+
 ## Config
+> Some basic documentation on my laravel app.
+
 The user.php file on the app folder is a model. as laravel follows the MVC concept so user.php behaves as a model.the controllers are in the: 
 ```
     app>http>controllers folder
